@@ -1,25 +1,14 @@
 <!DOCTYPE>
 <html>
   <head>
+    <meta charset="UTF-8" />
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
-
-    <script type="module">
-      import * as Map from "https://cdn.jsdelivr.net/npm/ol@8.2.0/Map.js";
-      import * as View from "https://cdn.jsdelivr.net/npm/ol@8.2.0/View.js";
-      import * as OSM from "https://cdn.jsdelivr.net/npm/ol@8.2.0/source/OSM.js";
-      import * as TileLayer from "https://cdn.jsdelivr.net/npm/ol@8.2.0/layer/Tile.js";
-
-      const map = new Map({target: "map"});
-      map.setView(new View({
-        center: [0,0];
-        zoom: 2;
-      }));
-      const source = OSM();
-      const layer = new TileLayer({source: source});
-      map.addLayer(layer);
-    </script>
-    
   </head>
   <body>
     <div id="map" style="width: 100%; height: 400px"></div>
