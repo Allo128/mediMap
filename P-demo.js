@@ -1,3 +1,4 @@
+/* 
 import Map from 'ol/Map.js';
 import TileLayer from 'ol/layer/Tile.js';
 import TileWMS from 'ol/source/TileWMS.js';
@@ -22,3 +23,4 @@ const map = new Map({
     }),
   ],
 });
+*/
