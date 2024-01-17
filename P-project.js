@@ -1,3 +1,4 @@
+/*
 import Map from 'ol/Map.js';
 import View from 'ol/View.js';
 import OSM from 'ol/source/OSM.js';
@@ -13,3 +14,4 @@ new Map({
   }),
   target: 'map',
 });
+*/
