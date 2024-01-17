@@ -1,7 +1,7 @@
-import Map from 'ol/Map.js';
-import OSM from 'ol/source/OSM.js';
-import TileLayer from 'ol/layer/Tile.js';
-import View from 'ol/View.js';
+import Map from 'https://cdn.jsdelivr.net/gh/openlayers/openlayers@main/src/ol/Map.js';
+import OSM from 'https://cdn.jsdelivr.net/gh/openlayers/openlayers@main/src/ol/source/OSM.js';
+import TileLayer from 'https://cdn.jsdelivr.net/gh/openlayers/openlayers@main/src/ol/layer/Tile.js';
+import View from 'https://cdn.jsdelivr.net/gh/openlayers/openlayers@main/src/ol/View.js';
 
 const map = new Map({
   layers: [
