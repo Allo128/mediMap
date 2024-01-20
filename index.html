@@ -19,9 +19,10 @@
           target: 'mapcontainer',
           layers: [
             new ol.layer.Tile({
-              source: new ol.source.xyz({
+              source: new ol.source.XYZ({
                 attributions: "<a href='https://maps.gsi.go.jp/development/ichiran.html' target='_blank'>国土地理院</a>",
-                url: "https://cyberjapandata.gsi.go.jp/xyz/airphoto/{z}/{x}/{y}.png"
+                url: "https://cyberjapandata.gsi.go.jp/xyz/airphoto/{z}/{x}/{y}.png",
+                projection: "EPSG:3857"
               })
             })
           ],
