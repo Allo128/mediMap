@@ -52,13 +52,13 @@ geolocation.on('change:accuracyGeometry', function () {
 
 const positionFeature = new ol.Feature();
 positionFeature.setStyle(
-  new Style({
-    image: new CircleStyle({
+  new ol.style.Style({
+    image: new ol.style.Circle({
       radius: 6,
-      fill: new Fill({
+      fill: new ol.style.Fill({
         color: '#3399CC',
       }),
-      stroke: new Stroke({
+      stroke: new ol.style.Stroke({
         color: '#808080',
         width: 2,
       }),
