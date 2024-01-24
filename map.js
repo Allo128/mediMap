@@ -1,7 +1,7 @@
 //function init_map() {
 
 
-const view = new ol.View({
+const mapview = new ol.View({
   center: ol.proj.fromLonLat([40,140]), 
   zoom: 6,
   maxZoom: 8
@@ -15,7 +15,7 @@ const map = new ol.Map({
       source: new ol.source.OSM()
     })
   ],
-  view: view
+  view: mapview
 });
 
 
@@ -25,7 +25,7 @@ const geolocation = new ol.Geolocation({
   trackingOptions: {
     enableHighAccuracy: true
   },
-  projection: view.getProjection(),
+  projection: mapview.getProjection(),
 });
 
 function el(id) {
