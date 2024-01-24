@@ -13,14 +13,13 @@ const map = new ol.Map({
   view: new ol.View({
     center: ol.proj.fromLonLat([36,140]), 
     zoom: 6,
-    maxZoom : 5,
-    minZoom : 20
+    maxZoom: 8
   })
 });
 
 const geolocation = new ol.Geolocation({
   trackingOptions: {
-    enableHighAccuracy: true,
+    enableHighAccuracy: true
   },
   projection: ol.View.getProjection(),
 });
@@ -56,13 +55,13 @@ positionFeature.setStyle(
     image: new ol.style.Circle({
       radius: 6,
       fill: new ol.style.Fill({
-        color: '#3399CC',
+        color: '#3399CC'
       }),
       stroke: new ol.style.Stroke({
         color: '#808080',
-        width: 2,
-      }),
-    }),
+        width: 2
+      })
+    })
   })
 );
 
@@ -75,7 +74,7 @@ new ol.layer.Vector({
   map: map,
   source: new ol.source.Vector({
     features: [accuracyFeature, positionFeature],
-  }),
+  })
 });
 
 
