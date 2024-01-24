@@ -13,25 +13,6 @@
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.1.0/dist/ol.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.1.0/ol.css">
 
-    <script>
-      function init_map() {
-        const map = new ol.Map({
-          target: 'container',
-          layers: [
-            new ol.layer.Tile({
-              source: new ol.source.OSM()
-            })
-          ],
-          view: new ol.View({
-            center: ol.proj.fromLonLat([131.5,33.2]), 
-            zoom: 6 
-          })
-        });
-      }
-
-
-      window.addEventListener('DOMContentLoaded', init_map());
-
-    </script>
+    <script src="./map.js"></script>
   </body>
 </html>
