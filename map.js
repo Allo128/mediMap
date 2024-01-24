@@ -11,11 +11,17 @@ const map = new ol.Map({
     })
   ],
   view: new ol.View({
-    center: [36,140], 
+    center: ol.proj.fromLonLat([40,140]), 
     zoom: 6,
     maxZoom: 8
   })
 });
+
+const view;
+
+
+
+
 
 const geolocation = new ol.Geolocation({
   trackingOptions: {
