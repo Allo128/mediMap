@@ -3,7 +3,7 @@
 
 const mapview = new ol.View({
   center: [40,140],
-  zoom: 6
+  zoom: 2,
 });
 
 
@@ -14,7 +14,7 @@ const map = new ol.Map({
       source: new ol.source.OSM()
     })
   ],
-  view: mapview
+  view: mapview,
 });
 
 
