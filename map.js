@@ -4,6 +4,7 @@
 const mapview = new ol.View({
   center: ol.proj.fromLonLat([131.407244, 33.182399]),
   zoom: 6,
+  extent: ol.proj.transformExtent([130.875630, 33.665779, 132.102984, 32.735597])
 });
 
 
