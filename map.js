@@ -15,10 +15,7 @@ const map = new ol.Map({
       source: new ol.source.OSM()
     })
   ],
-  view: new ol.View({
-    center: [0,0],
-    zoom: 2
-  })
+  view: mapview
 });
 
 
