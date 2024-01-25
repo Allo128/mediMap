@@ -15,7 +15,7 @@ const map = new ol.Map({
       source: new ol.source.OSM()
     })
   ],
-  view: mapview,
+  view: mapview
 });
 
 
@@ -25,7 +25,7 @@ const geolocation = new ol.Geolocation({
   trackingOptions: {
     enableHighAccuracy: true
   },
-  projection: mapview.getProjection(),
+  projection: mapview.getProjection()
 });
 
 function el(id) {
