@@ -5,10 +5,12 @@ const mapview = new ol.View({
   // center: ol.proj.fromLonLat([131.407244, 33.182399]),
   // zoom: 30,
   // extent: [130.875630, 33.665779, 132.102984, 32.735597],
+  
+  //center: ol.proj.fromLonLat([139.767, 35.681]),
+  //zoom: 11,
+  //extent: [139.7568, 35.6746, 139.7774, 35.6877],
   center: ol.proj.fromLonLat([139.767, 35.681]),
-  zoom: 11,
-  extent: [139.7568, 35.6746, 139.7774, 35.6877],
-    
+  zoom: 15
 });
 
 
@@ -19,7 +21,13 @@ const map = new ol.Map({
       source: new ol.source.OSM()
     })
   ],
-  view: mapview,
+  view: new ol.View({
+    
+    center: [139.767, 35.681],
+    zoom: 11,
+    extent: [139.7568, 35.6746, 139.7774, 35.6877],
+    
+  }),
   keyboardEventTarget: document,
   controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
 });
