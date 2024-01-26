@@ -32,8 +32,6 @@ const map = new ol.Map({
     extent: [139.7568, 35.6746, 139.7774, 35.6877],
     
   })*/
-    
-  //keyboardEventTarget: document,
   
   //controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
 
