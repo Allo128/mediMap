@@ -7,7 +7,7 @@ const mapview = new ol.View({
   // extent: [130.875630, 33.665779, 132.102984, 32.735597],
   center: ol.proj.fromLonLat([139.767, 35.681]),
   zoom: 11,
-  extent: ol.proj.transformExtent([139.7568, 35.6746, 139.7774, 35.6877], "", "")
+  extent: ol.proj.transformExtent([139.7568, 35.6746, 139.7774, 35.6877], "EPSG:3857", "EPSG:3857")
     
 });
 
@@ -29,7 +29,7 @@ const geolocation = new ol.Geolocation({
   trackingOptions: {
     enableHighAccuracy: true
   },
-  projection: mapview.getProjection(),
+  projection: mapview.getProjection("EPSG:3857"),
 });
 
 function el(id) {
