@@ -29,7 +29,7 @@ const geolocation = new ol.Geolocation({
   trackingOptions: {
     enableHighAccuracy: true
   },
-  projection: mapview.getProjection("EPSG:3857"),
+  projection: mapview.getProjection(),
 });
 
 function el(id) {
