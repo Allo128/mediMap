@@ -2,10 +2,9 @@
 
 
 const mapview = new ol.View({
-  
-  // center: ol.proj.fromLonLat([131.407244, 33.182399]),
-  // zoom: 30,
-  // extent: [130.875630, 33.665779, 132.102984, 32.735597],
+  center: ol.proj.fromLonLat([131.407244, 33.182399]),
+  zoom: 30,
+  extent: ol.proj.transformExtent([130.875630, 33.665779, 132.102984, 32.735597], "EPSG:4326", "EPSG:3857"),
   
   //center: [139.767, 35.681],
   //zoom: 11,
@@ -18,9 +17,9 @@ const mapview = new ol.View({
   
 
   //UTM coordinates
-  center: [328627.563458, 5921296.662223],
-  zoom: 8,
-  extent: [-572513.341856, 5211017.966314, 916327.095083, 6636950.728974],
+  //center: [328627.563458, 5921296.662223],
+  //zoom: 8,
+  //extent: [-572513.341856, 5211017.966314, 916327.095083, 6636950.728974],
   
 });
 
@@ -34,13 +33,6 @@ const map = new ol.Map({
   ],
   view: mapview,
     
-  /*new ol.View({
-    
-    center: [139.7670, 35.6810],
-    zoom: 11,
-    extent: [139.7568, 35.6746, 139.7774, 35.6877],
-    
-  })*/
   
   //controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
 
