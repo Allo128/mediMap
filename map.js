@@ -9,6 +9,7 @@ const mapview = new ol.View({
   //center: ol.proj.fromLonLat([139.767, 35.681]),
   //zoom: 11,
   //extent: [139.7568, 35.6746, 139.7774, 35.6877],
+  
   center: ol.proj.fromLonLat([139.767, 35.681]),
   zoom: 15
 });
@@ -23,13 +24,13 @@ const map = new ol.Map({
   ],
   view: new ol.View({
     
-    center: [139.767, 35.681],
+    center: [139.7670, 35.6810],
     zoom: 11,
     extent: [139.7568, 35.6746, 139.7774, 35.6877],
     
   }),
   keyboardEventTarget: document,
-  controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
+  //controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
 });
 
 
