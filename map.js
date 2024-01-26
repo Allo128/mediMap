@@ -22,14 +22,16 @@ const map = new ol.Map({
       source: new ol.source.OSM()
     })
   ],
-  view: /*new ol.View({
+  view: mapview,
+    
+  /*new ol.View({
     
     center: [139.7670, 35.6810],
     zoom: 11,
     extent: [139.7568, 35.6746, 139.7774, 35.6877],
     
   })*/
-  mapview,
+    
   keyboardEventTarget: document,
   //controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
 });
