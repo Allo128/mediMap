@@ -35,7 +35,11 @@ const map = new ol.Map({
 
 });
 
+map.on("postcompose",updateView);
 
+function updateView() {
+  mapview.setCenter(geolocation.getPosition());
+}
 
 
 const geolocation = new ol.Geolocation({
@@ -114,5 +118,5 @@ new ol.layer.Vector({
 
 window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
-  positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
+  
 });
