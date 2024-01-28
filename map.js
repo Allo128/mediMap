@@ -1,6 +1,6 @@
 const mapview = new ol.View({
   //projection: "EPSG:4326",
-  center: geolocation.getPosition(),
+  center: [131.407244, 33.182399],
   //center: ol.proj.fromLonLat([131.407244, 33.182399]),
   maxZoom : 18,
   minZoom : 7,
