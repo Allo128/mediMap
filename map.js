@@ -35,7 +35,7 @@ const map = new ol.Map({
 
 });
 
-map.on("postcompose",updateView);
+setTimeout(map.on("postcompose",updateView),500);
 
 function updateView() {
   mapview.setCenter(geolocation.getPosition());
