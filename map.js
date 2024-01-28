@@ -87,7 +87,10 @@ positionFeature.setStyle(
   })
 );
 
-geolocation.on('change:position', getPos());
+geolocation.on('change:position', function(){
+  const coordinates = geolocation.getPosition();
+  positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+});
 
 function getPos(){
   const coordinates = geolocation.getPosition();
@@ -111,5 +114,5 @@ new ol.layer.Vector({
 
 window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
-  getPos();
+  positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
 });
