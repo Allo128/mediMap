@@ -50,9 +50,9 @@ function el(id) {
   return document.getElementById(id);
 }
 
-el("track").addEventListener("change", function(){
-  geolocation.setTracking(this.checked);
-});
+/*el("track").addEventListener("change", function(){
+  geolocation.setTracking(true);
+});*/
 
 geolocation.on("change", function(){
   el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
@@ -100,9 +100,9 @@ new ol.layer.Vector({
 });
 
 
-//}
 
 
 
 
-//window.addEventListener('DOMContentLoaded', init_map());
+
+window.addEventListener('DOMContentLoaded', geolocation.setTracking(true));
