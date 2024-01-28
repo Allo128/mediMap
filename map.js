@@ -89,7 +89,7 @@ positionFeature.setStyle(
 
 geolocation.on('change:position', getPos());
 
-const getPos = () => {
+function getPos(){
   const coordinates = geolocation.getPosition();
   positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
 }
