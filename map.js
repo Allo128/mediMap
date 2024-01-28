@@ -35,12 +35,15 @@ const map = new ol.Map({
 
 });
 
+
+
+/*
 setTimeout(map.on("postcompose",updateView),500);
 
 function updateView() {
   mapview.setCenter(geolocation.getPosition());
 }
-
+*/
 
 const geolocation = new ol.Geolocation({
   trackingOptions: {
