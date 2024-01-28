@@ -86,12 +86,12 @@ positionFeature.setStyle(
     })
   })
 );
-
-geolocation.on('change:position', function () {
-  const coordinates = geolocation.getPosition();
-  positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
-});
-
+const getPos = () => {
+  geolocation.on('change:position', function () {
+    const coordinates = geolocation.getPosition();
+    positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+  });
+}
 new ol.layer.Vector({
   map: map,
   source: new ol.source.Vector({
@@ -107,5 +107,5 @@ new ol.layer.Vector({
 
 window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
-  geolocation.getPosition();
+  getPos();
 });
