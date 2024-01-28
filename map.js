@@ -105,4 +105,4 @@ new ol.layer.Vector({
 
 
 
-window.onload(setTimeout(function(){geolocation.setTracking(true);},2000));
+window.addEventListener("DOMContentLoaded",function(){geolocation.setTracking(true);});
