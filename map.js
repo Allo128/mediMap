@@ -99,11 +99,12 @@ geolocation.on('change:position', function(){
   positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
 });
 
+/*
 function getPos(){
   const coordinates = geolocation.getPosition();
   positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
 }
-
+*/
 
 
 new ol.layer.Vector({
