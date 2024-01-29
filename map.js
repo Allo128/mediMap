@@ -57,9 +57,9 @@ function el(id) {
   return document.getElementById(id);
 }
 
-/*el("track").addEventListener("change", function(){
-  geolocation.setTracking(true);
-});*/
+el("track").addEventListener("change", function(){
+  ol.View.setCenter(geolocation.getPosition());
+});
 
 geolocation.on("change", function(){
   el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
@@ -104,10 +104,12 @@ function getPos(){
   const coordinates = geolocation.getPosition();
   positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
 }
-*/
+
 setTimeout(function(){
   ol.View.setCenter(geolocation.getPosition());
 },100);
+
+*/
 
 new ol.layer.Vector({
   map: map,
