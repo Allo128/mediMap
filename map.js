@@ -58,7 +58,7 @@ function el(id) {
 }
 
 el("track").addEventListener("change", function(){
-  ol.View.setCenter([geolocation.getPosition()]);
+  //ol.View.setCenter([geolocation.getPosition()]);
   //alert(geolocation.getPosition());
 });
 
@@ -127,5 +127,7 @@ new ol.layer.Vector({
 
 window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
+  positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
+  map.render();
   //ol.View.setCenter(geolocation.getPosition());
 });
