@@ -105,7 +105,9 @@ function getPos(){
   positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
 }
 */
-
+setTimeout(function(){
+  ol.View.setCenter(geolocation.getPosition());
+},100);
 
 new ol.layer.Vector({
   map: map,
@@ -122,5 +124,5 @@ new ol.layer.Vector({
 
 window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
-  
+  ol.View.setCenter(geolocation.getPosition());
 });
