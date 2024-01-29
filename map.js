@@ -131,6 +131,11 @@ new ol.layer.Vector({
 
 
 window.addEventListener("DOMContentLoaded",function(){
+  setTimeout(function(){
+    geolocation.setTracking(true);
+    let coord = geolocation.getPosition();
+    mapview.setCenter(ol.proj.transform(coord,"EPSG:4326","EPSG:3857"));         
+  ,500);
   //geolocation.setTracking(true);
   //positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
   //map.render();
