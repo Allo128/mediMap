@@ -1,4 +1,4 @@
-const mapview = new ol.View({
+let mapview = new ol.View({
   //projection: "EPSG:4326",
   center: [131.407244, 33.182399],
   //center: ol.proj.fromLonLat([131.407244, 33.182399]),
