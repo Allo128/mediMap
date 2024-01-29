@@ -60,6 +60,7 @@ function el(id) {
 el("track").addEventListener("change", function(){
   //ol.View.setCenter([geolocation.getPosition()]);
   //alert(geolocation.getPosition());
+  geolocation.setTracking(this.checked);
 });
 
 geolocation.on("change", function(){
@@ -126,8 +127,8 @@ new ol.layer.Vector({
 
 
 window.addEventListener("DOMContentLoaded",function(){
-  geolocation.setTracking(true);
-  positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
-  map.render();
+  //geolocation.setTracking(true);
+  //positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
+  //map.render();
   //ol.View.setCenter(geolocation.getPosition());
 });
