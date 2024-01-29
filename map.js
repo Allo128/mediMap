@@ -59,7 +59,7 @@ function el(id) {
 
 el("track").addEventListener("change", function(){
   //ol.View.setCenter([geolocation.getPosition()]);
-  //alert(geolocation.getPosition());
+  alert(geolocation.getPosition());
   geolocation.setTracking(this.checked);
 });
 
