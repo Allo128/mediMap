@@ -68,6 +68,7 @@ geolocation.on("change", function(){
   el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
   el('position').innerText = geolocation.getPosition() + ' [m]';
   el('speed').innerText = geolocation.getSpeed() + ' [m/s]';
+  mapview.centerOn(geolocation.getPosition(), map.getSize(), [570,500]);
 });
 
 geolocation.on("error",function(){
