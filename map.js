@@ -60,8 +60,8 @@ function el(id) {
 el("track").addEventListener("change", function(){
   //ol.View.setCenter([geolocation.getPosition()]);
   geolocation.setTracking(this.checked);
-  alert(geolocation.getPosition());
-  ol.View.setCenter(geolocation.getPosition());
+  //alert(geolocation.getPosition());
+  //ol.View.setCenter(geolocation.getPosition());
 });
 
 geolocation.on("change", function(){
