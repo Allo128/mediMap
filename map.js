@@ -58,8 +58,8 @@ function el(id) {
 }
 
 el("track").addEventListener("change", function(){
-  //ol.View.setCenter(131.000000, 33.00000);
-  alert(geolocation.getPosition());
+  ol.View.setCenter([geolocation.getPosition()]);
+  //alert(geolocation.getPosition());
 });
 
 geolocation.on("change", function(){
