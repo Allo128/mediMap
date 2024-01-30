@@ -80,6 +80,11 @@ positionFeature.setStyle(
 );
 
 
+el("checkButton").addEventListener("click",function(){
+  alert(el("nameText").value);
+});
+
+
 
 const destinationFeature = new ol.Feature();
 destinationFeature.setStyle(
