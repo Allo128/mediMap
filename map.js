@@ -118,7 +118,8 @@ function setDestination(lng,lat,name){
     let feature = map.forEachFeatureAtPixel(evt.pixel,function(feature) {return feature;});
     if (feature) {
       //content.innerHTML = feature.get('name');
-      var coordinate = feature.getGeometry().getCoordinates();
+      let coordinate = feature.getGeometry().getCoordinates();
+      el(coord).innerHTML = coordinate;
       //popoverlay.setPosition(coordinate);
       map.getViewport().style.cursor = 'pointer';
     }
