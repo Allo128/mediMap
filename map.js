@@ -93,7 +93,7 @@ positionFeature.setStyle(
         color: '#3399CC'
       }),
       stroke: new ol.style.Stroke({
-        color: '#808080',
+        color: '#FFFFFF',
         width: 2
       })
     })
