@@ -91,7 +91,7 @@ destinationFeature.setStyle(
   new ol.style.Style({
     image: new ol.style.Icon({
       anchor: [0.5,1],
-      src: "./Images/pin.png",
+      src: "./Images/map_marker-1.svg",
       height: 20px,
       width: 10px
     })
