@@ -24,7 +24,7 @@ const map = new ol.Map({
   }),
   */
   
-  controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
+  //controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
 
 });
 
