@@ -23,8 +23,6 @@ const map = new ol.Map({
     extent: transformExtent([139.7568, 35.6746, 139.7774, 35.6877], 'EPSG:4326', 'EPSG:3857')
   }),
   */
-  
-  //controls: ol.control.defaults().extend([new ol.control.ZoomSlider()]),
 
 });
 
