@@ -58,7 +58,7 @@ function el(id) {
 
 el("track").addEventListener("change", function(){
   //ol.View.setCenter([geolocation.getPosition()]);
-  geolocation.setTracking(this.checked);
+  //geolocation.setTracking(this.checked);
   const coord = geolocation.getPosition();
   mapview.setCenter(ol.proj.transform(coord,"EPSG:4326","EPSG:3857"));
   //alert(Array.isArray(geolocation.getPosition()));
