@@ -5,6 +5,10 @@
     <meta http-equiv='content-type' charset='utf-8'>
     <meta name='viewport' content='width=device-width,height=device-height,initial-scale=1'>
     <style>
+      .wrapper{
+        width:100%;
+        display:flex;
+      }
       .former{
         width: 50%;
         padding:8px;
@@ -25,22 +29,23 @@
     </style>
   </head>
   <body>
-    <div class="former">
-      <div id="info" style="display:none;"></div>
-      <label for="track">
-        track position
-        <input id="track" type="checkbox" />
-      </label>
-      <p id="locationInfo">
-        position accuracy : <code id="accuracy"></code>&nbsp;&nbsp;
-        position : <code id="position"></code>&nbsp;&nbsp;
-        speed : <code id="speed"></code>&nbsp;&nbsp;
-      </p>
+    <div class="wrapper">
+      <div class="former">
+        <div id="info" style="display:none;"></div>
+        <label for="track">
+          track position
+          <input id="track" type="checkbox" />
+        </label>
+        <p id="locationInfo">
+          position accuracy : <code id="accuracy"></code>&nbsp;&nbsp;
+          position : <code id="position"></code>&nbsp;&nbsp;
+          speed : <code id="speed"></code>&nbsp;&nbsp;
+        </p>
+      </div>
+      <div class="latter">
+        <div id='container'></div>
+      </div>
     </div>
-    <div class="latter">
-      <div id='container'></div>
-    </div>
-    
     <script src="https://cdn.jsdelivr.net/npm/ol@v8.1.0/dist/ol.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.1.0/ol.css">
     <script src="./map.js"></script>
