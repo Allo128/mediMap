@@ -81,6 +81,18 @@ positionFeature.setStyle(
   })
 );
 
+/*
+
+const destinationFeature = new ol.Feature();
+destinationFeature.setStyle(
+  new ol.style.Style({
+    image:
+    
+  })
+);
+
+*/
+
 geolocation.on('change:position', function(){
   const coordinates = geolocation.getPosition();
   const coo = ol.proj.transform(coordinates,"EPSG:4326","EPSG:3857");
