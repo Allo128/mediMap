@@ -58,7 +58,7 @@ function el(id) {
 
 el("track").addEventListener("change", function(){
   //ol.View.setCenter([geolocation.getPosition()]);
-  //geolocation.setTracking(this.checked);
+  geolocation.setTracking(this.checked);
   const coord = geolocation.getPosition();
   mapview.setCenter(ol.proj.transform(coord,"EPSG:4326","EPSG:3857"));
   //alert(Array.isArray(geolocation.getPosition()));
@@ -132,7 +132,7 @@ new ol.layer.Vector({
 
 
 window.addEventListener("DOMContentLoaded",function(){
-  geolocation.setTracking(true);
+  //geolocation.setTracking(true);
   //positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
   //map.render();
   //ol.View.setCenter(geolocation.getPosition());
