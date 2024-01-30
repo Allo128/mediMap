@@ -91,7 +91,9 @@ destinationFeature.setStyle(
   new ol.style.Style({
     image: new ol.style.Icon({
       anchor: [0.5,1],
-      src: "./Images/pin.png"
+      src: "./Images/pin.png",
+      height: 20px,
+      width: 10px
     })
   })
 );
