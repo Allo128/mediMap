@@ -81,17 +81,31 @@ positionFeature.setStyle(
   })
 );
 
-/*
+
 
 const destinationFeature = new ol.Feature();
 destinationFeature.setStyle(
   new ol.style.Style({
-    image:
-    
+    image: new ol.style.Circle({
+      radius: 8,
+      fill: new ol.style.Fill({
+        color: "#fc7276"
+      }),
+      stroke : new ol.style.Stroke({
+        color: "#FFF",
+        width: 2
+      })
+    })
   })
 );
 
-*/
+function setDestination(lng,lat,name){
+  const coordinates = ol.proj.transform([lng,lat],"EPSG:4326","EPSG:3857");
+  destinationFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+  
+}
+
+
 
 geolocation.on('change:position', function(){
   const coordinates = geolocation.getPosition();
