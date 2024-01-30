@@ -67,13 +67,13 @@ const positionFeature = new ol.Feature();
 positionFeature.setStyle(
   new ol.style.Style({
     image: new ol.style.Circle({
-      radius: 6,
+      radius: 10,
       fill: new ol.style.Fill({
         color: '#3399CC'
       }),
       stroke: new ol.style.Stroke({
         color: '#FFF',
-        width: 2
+        width: 3
       })
     })
   })
@@ -90,7 +90,7 @@ const destinationFeature = new ol.Feature();
 destinationFeature.setStyle(
   new ol.style.Style({
     image: new ol.style.Circle({
-      radius: 10,
+      radius: 12,
       fill: new ol.style.Fill({
         color: '#f54254'
       }),
