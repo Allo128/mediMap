@@ -134,6 +134,7 @@ new ol.layer.Vector({
 window.addEventListener("DOMContentLoaded",function(){
   setTimeout(function(){
     geolocation.setTracking(true);
+
   },100)
   //positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
   //map.render();
