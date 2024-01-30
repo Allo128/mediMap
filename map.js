@@ -3,7 +3,7 @@ const mapview = new ol.View({
   //center: [131.463774, 33.227400],
   center: ol.proj.fromLonLat([131.463774, 33.227400]),
   minZoom : 7,
-  zoom: 14,
+  zoom: 7,
   //extent: [129.534766, 33.934488, 132.014351, 31.153983],  
   extent: ol.proj.transformExtent([130.824563, 32.714204, 132.102984, 33.740596], "EPSG:4326", "EPSG:3857"),
   /*
@@ -106,17 +106,7 @@ geolocation.on('change:position', function(){
   positionFeature.setGeometry(coo ? new ol.geom.Point(coo) : null);
 });
 
-/*
-function getPos(){
-  const coordinates = geolocation.getPosition();
-  positionFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
-}
 
-setTimeout(function(){
-  ol.View.setCenter(geolocation.getPosition());
-},100);
-
-*/
 
 new ol.layer.Vector({
   map: map,
@@ -125,6 +115,10 @@ new ol.layer.Vector({
   })
 });
 
+function currentSet(){
+  const currentCoord = geolocation.getPosition()
+  mapview.setCenter(ol.proj.transform(currentCoord,"EPSG:4326","EPSG:3857"));
+}
 
 
 
