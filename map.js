@@ -132,7 +132,9 @@ new ol.layer.Vector({
 
 
 window.addEventListener("DOMContentLoaded",function(){
-  //geolocation.setTracking(true);
+  setTimeout(function(){
+    geolocation.setTracking(true);
+  },100)
   //positionFeature.setGeometry(geolocation.getPosition() ? new ol.geom.Point(coordinates) : null);
   //map.render();
   //ol.View.setCenter(geolocation.getPosition());
