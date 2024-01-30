@@ -105,7 +105,13 @@ destinationFeature.setStyle(
 function setDestination(lng,lat,name){
   const coordinates = ol.proj.transform([lng,lat],"EPSG:4326","EPSG:3857");
   destinationFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
-  
+  map.addLayer(
+    new ol.layer.Vector({
+      source: new ol.source.Vector({
+        features: [destinationFeature]
+      })
+    })
+  );
 }
 
 
@@ -118,7 +124,7 @@ geolocation.on('change:position', function(){
 
 
 
-new ol.layer.Vector({
+const vectorLayer = new ol.layer.Vector({
   map: map,
   source: new ol.source.Vector({
     features: [accuracyFeature, positionFeature],
