@@ -99,6 +99,7 @@ new ol.layer.Vector({
 function currentSet(){
   const currentCoord = geolocation.getPosition();
   mapview.setCenter(ol.proj.transform(currentCoord,"EPSG:4326","EPSG:3857"));
+  mapview.setZoom(14);
 }
 
 
@@ -109,7 +110,6 @@ function currentSet(){
 window.addEventListener("DOMContentLoaded",function(){
   setTimeout(function(){
     geolocation.setTracking(true);
-    mapview.setZoom(14);
     //mapview.setCenter(ol.proj.transform(geolocation.getPosition(),"EPSG:4326","EPSG:3857"));
   },100);
 });
