@@ -114,6 +114,17 @@ function setDestination(lng,lat,name){
   );
 }
 
+  map.on(['click'], function(evt) {
+    let feature = map.forEachFeatureAtPixel(evt.pixel,function(feature) {return feature;});
+    if (feature) {
+      content.innerHTML = feature.get('name');
+      var coordinate = feature.getGeometry().getCoordinates();
+      popoverlay.setPosition(coordinate);
+      map.getViewport().style.cursor = 'pointer';
+    }
+  });
+
+
 
 
 geolocation.on('change:position', function(){
