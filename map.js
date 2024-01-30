@@ -99,7 +99,7 @@ new ol.layer.Vector({
 });
 
 function currentSet(){
-  const currentCoord = geolocation.getPosition()
+  const currentCoord = geolocation.getPosition();
   mapview.setCenter(ol.proj.transform(currentCoord,"EPSG:4326","EPSG:3857"));
 }
 
