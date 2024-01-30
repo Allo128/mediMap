@@ -89,11 +89,15 @@ el("checkButton").addEventListener("click",function(){
 const destinationFeature = new ol.Feature();
 destinationFeature.setStyle(
   new ol.style.Style({
-    image: new ol.style.Icon({
-      anchor: [0.5,1],
-      src: "./Images/map_marker-1.svg",
-      height: 20px,
-      width: 10px
+    image: new ol.style.Circle({
+      radius: 10,
+      fill: new ol.style.Fill({
+        color: '#f54254'
+      }),
+      stroke: new ol.style.Stroke({
+        color: '#FFF',
+        width: 4
+      })
     })
   })
 );
