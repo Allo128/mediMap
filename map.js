@@ -102,7 +102,7 @@ positionFeature.setStyle(
 
 geolocation.on('change:position', function(){
   const coordinates = geolocation.getPosition();
-  const coo = ol.proj.transform(coord,"EPSG:4326","EPSG:3857");
+  const coo = ol.proj.transform(coordinates,"EPSG:4326","EPSG:3857");
   positionFeature.setGeometry(coo ? new ol.geom.Point(coo) : null);
 });
 
