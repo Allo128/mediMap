@@ -17,7 +17,7 @@ for (let i = 0; i < lines.length; ++i) {
   }
 }
 
-alert(csvArray[2][0]);
+el("coord").innerHTML = csvArray[2][0];
 
 
 
