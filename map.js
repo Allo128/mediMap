@@ -111,6 +111,7 @@ destinationFeature.setStyle(
 );
 
 
+
 function setDestination(lng,lat,name){
   const coordinates = ol.proj.transform([lng,lat],"EPSG:4326","EPSG:3857");
   destinationFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
