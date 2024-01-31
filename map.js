@@ -86,7 +86,7 @@ const marker = new ol.Overlay({
 map.addOverlay(marker);
 
 const oita = new ol.Overlay({
-  position: ol.proj.fromLonLat([131.463774, 33.227400]),
+  position: ol.proj.fromLonLat([131, 33]),
   element: el("oita"),
 });
 map.addOverlay(oita);
