@@ -77,13 +77,6 @@ el("checkButton").addEventListener("click",function(){
 });
 
 
-const marker = new ol.Overlay({
-  position: ol.proj.fromLonLat([131.463774, 33.227400]),
-  positioning: "center-center",
-  element: el("marker"),
-  stopEvent: false,
-});
-map.addOverlay(marker);
 
 const oita = new ol.Overlay({
   position: ol.proj.fromLonLat([131, 33]),
