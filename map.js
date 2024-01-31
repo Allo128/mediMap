@@ -1,3 +1,31 @@
+let csv = new XMLHttpRequest();
+csv.open("GET", "./hospital.csv", false);
+ try {
+  csv.send(null);
+} catch (err) {
+  console.log(err);
+}
+
+let csvArray = [];
+ 
+let lines = csv.responseText.split(/\r\n|\n/);
+ 
+for (let i = 0; i < lines.length; ++i) {
+  let cells = lines[i].split(",");
+  if (cells.length != 1) {
+    csvArray.push(cells);
+  }
+}
+
+el("coord").innerHTML = csvArray;
+
+
+
+
+
+
+
+
 const mapview = new ol.View({
   center: ol.proj.fromLonLat([131.463774, 33.227400]),
   minZoom : 7,
