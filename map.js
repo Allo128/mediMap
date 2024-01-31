@@ -84,7 +84,7 @@ el("checkButton").addEventListener("click",function(){
 });
 
 el("oita").addEventListener("click",function(){
-  const destiCoord = oita.getPosition();
+  const destiCoord = ol.proj.toLonLat(oita.getPosition());
   alert(destiCoord);
   //const currentCoord = geolocation.getPosition();
   //alert(distance(destiCoord[1],destiCoord[0],currentCoord[1],currentCoord[0]));
