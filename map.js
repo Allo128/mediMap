@@ -146,14 +146,9 @@ function currentSet(){
   mapview.setZoom(14);
 }
 
-
-
-
-window.addEventListener("DOMContentLoaded",function(){
-  geolocation.setTracking(true);
- 
+function xhrCsv(path,arrayName){
   let csv = new XMLHttpRequest();
-  csv.open("GET", "Datas/aed.csv", false);
+  csv.open("GET", path, false);
   try {
     csv.send(null);
   } catch (err) {
@@ -163,10 +158,15 @@ window.addEventListener("DOMContentLoaded",function(){
   for (let i = 0; i < lines.length; ++i) {
     let cells = lines[i].split(",");
     if (cells.length != 1) {
-      aedArray.push(cells);
+      arrayName.push(cells);
     }
   }
-  setTimeout(function(){
-    el("coord").innerHTML = aedArray[2][0];
-  },0);
+}
+
+
+window.addEventListener("DOMContentLoaded",function(){
+  geolocation.setTracking(true);
+  xhrCsv("Datas/aed.csv",aedArray);
+  xhrCsv("Datas/hospital.csv",hospitalArray);
+  el("coord").innerHTML = `"${aedArray[2][0]}"+"${hospitalArray[2][0]}"`;
 });
