@@ -214,6 +214,44 @@ function xhrCsv(path,arrayName){
 }
 
 
+
+function setHospital(){
+  let arr = hospitalArray;
+  let length = hospitalArray.length;
+  let parent = el("markers");
+  let former = document.getElementByClassName("former")[0];
+  for (let i = 2; i < length; i++){
+    let child = document.createElement("div");
+    let name = arr[i][0];
+    let post = arr[i][1];
+    let place = arr[i][2];
+    let phone = arr[i][3];
+    let subject = arr[i][5];
+    let normalBed = arr[i][6];
+    let longBed = arr[i][7];
+    let totalBed = arr[i][8];
+    if(normalBed == null && longBed == null){
+      normalBed = 0;
+      longBed = 0;
+      totalBed = 0;
+    }else{
+      if(normalBed == null && longBed){
+        normalBed = 0;
+      }else if(longBed == null && normalBed){
+        longBed = 0;
+      }else{
+        totalBed = normalBed + longBed;
+      }
+    }
+    child.innerHTML = name;
+    
+
+
+    
+  }
+}
+
+
 window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
   xhrCsv("Datas/aed.csv",aedArray);
