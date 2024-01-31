@@ -14,14 +14,6 @@ const map = new ol.Map({
     })
   ],
   view: mapview,
-    /*
-    new ol.View({
-    center: fromLonLat([139.767, 35.681]),
-    zoom: 11,
-    extent: transformExtent([139.7568, 35.6746, 139.7774, 35.6877], 'EPSG:4326', 'EPSG:3857')
-  }),
-  */
-
 });
 
 
@@ -79,12 +71,31 @@ positionFeature.setStyle(
   })
 );
 
-/*
+
 el("checkButton").addEventListener("click",function(){
   alert(el("nameText").value);
 });
-*/
 
+
+const marker = new ol.Overlay({
+  position: ol.proj.fromLonLat([131.463774, 33.227400]),
+  positioning: "center-center",
+  element: el("marker"),
+  stopEvent: false,
+});
+map.addOverlay(marker);
+
+const oita = new Overlay({
+  position: ol.proj.fromLonLat([131.463774, 33.227400]),
+  element: el("oita"),
+});
+map.addOverlay(oita);
+
+
+
+
+
+//hospital:red,AED:yellow
 
 const destinationFeature = new ol.Feature();
 destinationFeature.setStyle(
@@ -102,6 +113,7 @@ destinationFeature.setStyle(
   })
 );
 
+
 function setDestination(lng,lat,name){
   const coordinates = ol.proj.transform([lng,lat],"EPSG:4326","EPSG:3857");
   destinationFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
@@ -114,20 +126,6 @@ function setDestination(lng,lat,name){
   );
 }
 
-/*
-
-  map.on(['click'], function(evt) {
-    let feature = map.forEachFeatureAtPixel(evt.pixel,function(feature) {return feature;});
-    if (feature) {
-      //content.innerHTML = feature.get('name');
-      let coordinate = feature.getGeometry().getCoordinates();
-      el(coord).innerHTML = coordinate;
-      //popoverlay.setPosition(coordinate);
-      map.getViewport().style.cursor = 'pointer';
-    }
-  });
-
-*/
 
 
 geolocation.on('change:position', function(){
