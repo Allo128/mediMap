@@ -183,18 +183,16 @@ window.addEventListener("DOMContentLoaded",function(){
   } catch (err) {
     console.log(err);
   }
-
   let csvArray = [];
- 
   let lines = csv.responseText.split(/\r\n|\n/);
- 
   for (let i = 0; i < lines.length; ++i) {
     let cells = lines[i].split(",");
     if (cells.length != 1) {
       csvArray.push(cells);
     }
   }
-  el("coord").innerHTML = csvArray[2][0];
-
+  setTimeout(function(){
+    el("coord").innerHTML = csvArray[2][0];
+  },300);
 
 });
