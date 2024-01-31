@@ -1,4 +1,4 @@
-let AEDArray = [];
+let aedArray = [];
 let hospitalArray = [];
 
 
