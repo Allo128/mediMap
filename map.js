@@ -219,9 +219,10 @@ function setHospital(){
   let arr = hospitalArray;
   let length = hospitalArray.length;
   let parent = el("markers");
-  let former = document.getElementByClassName("former")[0];
+  let former = el("details");
   for (let i = 2; i < length; i++){
     let child = document.createElement("div");
+    let text = document.createElement("p");
     let name = arr[i][0];
     let post = arr[i][1];
     let place = arr[i][2];
@@ -240,10 +241,18 @@ function setHospital(){
       }else if(longBed == null && normalBed){
         longBed = 0;
       }else{
-        totalBed = normalBed + longBed;
+
       }
     }
     child.innerHTML = name;
+    child.className = "overlay";
+    child.id = "hospital" + i;
+    child.style.display = "none";
+    parent.appendChild(child);
+    text.innerHTML = name 
+
+
+    
     
 
 
