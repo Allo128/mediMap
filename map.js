@@ -153,7 +153,7 @@ window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
  
   let csv = new XMLHttpRequest();
-  csv.open("GET", "Datas/hospital.csv", false);
+  csv.open("GET", "Datas/aed.csv", false);
   try {
     csv.send(null);
   } catch (err) {
