@@ -168,6 +168,6 @@ window.addEventListener("DOMContentLoaded",function(){
     }
   }
   setTimeout(function(){
-    el("coord").innerHTML = csvArray[2][0];
+    el("coord").innerHTML = aedArray[2][0];
   },0);
 });
