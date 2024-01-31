@@ -45,11 +45,6 @@ function el(id) {
   return document.getElementById(id);
 }
 
-geolocation.on("change", function(){
-  el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
-  el('position').innerText = geolocation.getPosition() + ' [m]';
-  el('speed').innerText = geolocation.getSpeed() + ' [m/s]';
-});
 
 geolocation.on("error",function(){
   const info = document.getElementById("info");
@@ -135,6 +130,15 @@ aedFeature.setStyle(
     })
   })
 );
+/*
+const aedLayer = new ol.layer.Vector({
+  map: map,
+  source: new ol.source.Vector({
+    features: [accuracyFeature, positionFeature],
+  })
+});
+
+*/
 
 
 function setDestination(lng,lat,feature,name){
