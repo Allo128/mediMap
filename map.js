@@ -157,19 +157,5 @@ function currentSet(){
 
 
 window.addEventListener("DOMContentLoaded",function(){
-  new Promise((resolve,reject) => {
-    geolocation.setTracking(true);
-    resolve();
-  })
-    .then(() => {
-      mapview.setCenter(ol.proj.transform(geolocation.getPosition(),"EPSG:4326","EPSG:3857"));
-    });
-
-  /*
-  setTimeout(function(){
-    geolocation.setTracking(true);
-    //mapview.setCenter(ol.proj.transform(geolocation.getPosition(),"EPSG:4326","EPSG:3857"));
-  },100);
-  */
-  
+  geolocation.setTracking(true);
 });
