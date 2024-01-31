@@ -1,5 +1,5 @@
 let csv = new XMLHttpRequest();
-csv.open("GET", "./hospital.csv", false);
+csv.open("GET", "./Datas/hospital.csv", false);
  try {
   csv.send(null);
 } catch (err) {
