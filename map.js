@@ -249,15 +249,18 @@ function setHospital(){
     child.id = "hospital" + i;
     child.style.display = "none";
     parent.appendChild(child);
-    text.innerHTML = name 
-
-
-    
-    
-
-
-    
+    text.innerHTML = arr[i];
+    text.id = "hosp" + i;
+    text.style.display = "none";
+    former.appendChild(text);
   }
+}
+for(let i = 2; i < hospitalArray.length; i++){
+  eval(
+    `el(hospital${i}).addEventListener("click",function(){
+      
+    });`
+  );
 }
 
 
