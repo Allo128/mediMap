@@ -95,6 +95,25 @@ map.addOverlay(oita);
 
 
 
+const destinationFeature = new ol.Feature();
+destinationFeature.setStyle(
+  new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 8,
+      fill: new ol.style.Fill({
+        color: '#b0f279'
+      }),
+      stroke: new ol.style.Stroke({
+        color: '#FFF',
+        width: 2
+      })
+    })
+  })
+);
+
+
+
+
 
 
 //MarkerColor{hospital:red,AED:yellow}
