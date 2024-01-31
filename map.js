@@ -34,14 +34,6 @@ function el(id) {
   return document.getElementById(id);
 }
 
-el("track").addEventListener("change", function(){
-  //geolocation.setTracking(this.checked);
-  const coord = geolocation.getPosition();
-  mapview.setCenter(ol.proj.transform(coord,"EPSG:4326","EPSG:3857"));
-  //alert(Array.isArray(geolocation.getPosition()));
-  //alert(geolocation.getPosition());
-});
-
 geolocation.on("change", function(){
   el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
   el('position').innerText = geolocation.getPosition() + ' [m]';
