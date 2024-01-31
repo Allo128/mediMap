@@ -92,7 +92,7 @@ map.addOverlay(oita);
 
 
 
-//hospital:red,AED:yellow
+//MarkerColor{hospital:red,AED:yellow}
 
 const destinationFeature = new ol.Feature();
 destinationFeature.setStyle(
@@ -144,6 +144,7 @@ function currentSet(){
   const currentCoord = geolocation.getPosition();
   mapview.setCenter(ol.proj.transform(currentCoord,"EPSG:4326","EPSG:3857"));
   mapview.setZoom(14);
+  el("oita").style.display = "block"
 }
 
 function xhrCsv(path,arrayName){
