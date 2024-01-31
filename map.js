@@ -86,8 +86,8 @@ map.addOverlay(oita);
 
 //MarkerColor{hospital:red,AED:yellow}
 
-const destinationFeature = new ol.Feature();
-destinationFeature.setStyle(
+const hospitalFeature = new ol.Feature();
+hospitalFeature.setStyle(
   new ol.style.Style({
     image: new ol.style.Circle({
       radius: 12,
@@ -102,15 +102,30 @@ destinationFeature.setStyle(
   })
 );
 
+const aedFeature = new ol.Feature();
+aedFeature.setStyle(
+  new ol.style.Style({
+    image: new ol.style.Circle({
+      radius: 8,
+      fill: new ol.style.Fill({
+        color: '#f5d247'
+      }),
+      stroke: new ol.style.Stroke({
+        color: '#FFF',
+        width: 2
+      })
+    })
+  })
+);
 
 
-function setDestination(lng,lat,name){
+function setDestination(lng,lat,feature,name){
   const coordinates = ol.proj.transform([lng,lat],"EPSG:4326","EPSG:3857");
-  destinationFeature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
+  feature.setGeometry(coordinates ? new ol.geom.Point(coordinates) : null);
   map.addLayer(
     new ol.layer.Vector({
       source: new ol.source.Vector({
-        features: [destinationFeature]
+        features: [feature]
       })
     })
   );
