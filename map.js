@@ -114,6 +114,8 @@ function setDestination(lng,lat,name){
   );
 }
 
+/*
+
   map.on(['click'], function(evt) {
     let feature = map.forEachFeatureAtPixel(evt.pixel,function(feature) {return feature;});
     if (feature) {
@@ -125,7 +127,7 @@ function setDestination(lng,lat,name){
     }
   });
 
-
+*/
 
 
 geolocation.on('change:position', function(){
@@ -155,8 +157,19 @@ function currentSet(){
 
 
 window.addEventListener("DOMContentLoaded",function(){
+  new Promise((resolve,reject) => {
+    geolocation.setTracking(true);
+    resolve();
+  })
+    .then(() => {
+      mapview.setCenter(ol.proj.transform(geolocation.getPosition(),"EPSG:4326","EPSG:3857"));
+    });
+
+  /*
   setTimeout(function(){
     geolocation.setTracking(true);
     //mapview.setCenter(ol.proj.transform(geolocation.getPosition(),"EPSG:4326","EPSG:3857"));
   },100);
+  */
+  
 });
