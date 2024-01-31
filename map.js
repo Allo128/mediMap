@@ -1,27 +1,5 @@
-/*
-let csv = new XMLHttpRequest();
-csv.open("GET", "Datas/hospital.csv", false);
- try {
-  csv.send(null);
-} catch (err) {
-  console.log(err);
-}
-
-let csvArray = [];
- 
-let lines = csv.responseText.split(/\r\n|\n/);
- 
-for (let i = 0; i < lines.length; ++i) {
-  let cells = lines[i].split(",");
-  if (cells.length != 1) {
-    csvArray.push(cells);
-  }
-}
-
-el("coord").innerHTML = csvArray[2][0];
-*/
-
-
+let AEDArray = [];
+let hospitalArray = [];
 
 
 const mapview = new ol.View({
@@ -171,8 +149,6 @@ function currentSet(){
 
 
 
-
-
 window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
  
@@ -193,6 +169,5 @@ window.addEventListener("DOMContentLoaded",function(){
   }
   setTimeout(function(){
     el("coord").innerHTML = csvArray[2][0];
-  },300);
-
+  },0);
 });
