@@ -159,33 +159,46 @@ const aedLayer = new ol.layer.Vector({
   map: map  
 });
 
-function setLayer(feature,array){
-  const featureArray = [];
-  if(feature=="hospitalFeature"){
-
-
-  }else if(feature=='aedFeature'){
-/*    let aedFeature = new ol.Feature();
-    aedFeature.setStyle(
-      new ol.style.Style({
-        image: new ol.style.Circle({
-          radius: 8,
-          fill: new ol.style.Fill({
-            color: '#f5d247'
-          }),
-          stroke: new ol.style.Stroke({
-            color: '#FFF',
-            width: 2
-          })
+function aedFeatureSet(feature){
+  feature.setStyle(
+    new ol.style.Style({
+      image: new ol.style.Circle({
+        radius: 8,
+        fill: new ol.style.Fill({
+          color: '#f5d247'
+        }),
+        stroke: new ol.style.Stroke({
+          color: '#FFF',
+          width: 2
         })
       })
-    );*/
+    })
+  );
+};
+
+
+
+
+
+
+
+
+
+
+function setLayer(feature,array){
+  const featureArray = [];
+  if(feature=="hospital"){
+
+
+  }else if(feature=='aed'){
+    
     for(let i=0;i<array.length;i++){
+      let number = i+1;
+      
       let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(feature);
       //aedFeature.setGeometry();
-      let number = i+1;
       let ex = new ol.Overlay({
         position: ol.proj.fromLonLat(array[i]),
         element: el("aed"+number),
