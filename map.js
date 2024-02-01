@@ -73,11 +73,11 @@ positionFeature.setStyle(
   })
 );
 
-let kusa = [0,8];
+let kusa = [5,8];
 el("checkButton").addEventListener("click",function(){
   alert(el("nameText").value);
   let hoge = kusa;
-  alert(hoge);
+  alert(hoge[0]);
 });
 
 el("oita").addEventListener("click",function(){
