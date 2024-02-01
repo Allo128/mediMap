@@ -177,12 +177,13 @@ function setLayer(type,array){
     );
     map.addLayer(layer);
     
-  }else if(type==="aed"){
+  }else if(type=='aed'){
     
     for(let i=0;i<array.length;i++){
       let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       aedFeature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(aedFeature);
+      aedFeature.setGeometry();
       let ex = new ol.Overlay({
         position: ol.proj.fromLonLat(array[i]),
         element: el("aed"+i),
