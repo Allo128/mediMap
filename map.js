@@ -73,11 +73,8 @@ positionFeature.setStyle(
   })
 );
 
-let kusa = [5,8];
 el("checkButton").addEventListener("click",function(){
   alert(el("nameText").value);
-  let hoge = kusa;
-  alert(hoge[0]);
 });
 
 el("oita").addEventListener("click",function(){
@@ -164,8 +161,9 @@ function setLayer(type,array){
   const featureArray = [];
   if(type=="hospital"){
 
-    const feature = hospitalFeaute;
+
     for(let i=0;i<array.length;i++){
+      const feature = hospitalFeaute;
       //const coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(feature);
@@ -180,8 +178,8 @@ function setLayer(type,array){
     
   }else if(type=="aed"){
     
-    const feature = aedFeaute;
     for(let i=0;i<array.length;i++){
+      const feature = aedFeaute;
       const coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(feature);
