@@ -160,7 +160,7 @@ const aedLayer = new ol.layer.Vector({
 
 function setLayer(type,array){
   const featureArray = [];
-  if(type=="hospital"){
+  if(type==="hospital"){
 
 
     for(let i=0;i<array.length;i++){
@@ -177,7 +177,7 @@ function setLayer(type,array){
     );
     map.addLayer(layer);
     
-  }else if(type=="aed"){
+  }else if(type==="aed"){
     
     for(let i=0;i<array.length;i++){
       const feature = aedFeaute;
