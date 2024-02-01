@@ -310,11 +310,14 @@ function setHospital(){
 }
 
 
-function coder(address){
+async function coder(address){
   const id = "dj00aiZpPVV6WlpKTm0xWndUZiZzPWNvbnN1bWVyc2VjcmV0Jng9MmI-";
   const encoded = encodeURI(address);
   const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
-}
+  const res = await fetch(url);
+  const users = await res.json();
+  alert(users);
+};
 
 
 
@@ -328,4 +331,5 @@ window.addEventListener("DOMContentLoaded",function(){
   xhrCsv("Datas/aed.csv",aedArray);
   xhrCsv("Datas/hospital.csv",hospitalArray);
   el("coord").innerHTML = `"${aedArray[2][0]}"+"${hospitalArray[2][0]}"`;
+  coder("大分県");
 });
