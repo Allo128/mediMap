@@ -75,7 +75,8 @@ positionFeature.setStyle(
 
 el("checkButton").addEventListener("click",function(){
   alert(el("nameText").value);
-  alert(setAed());
+  //alert(setAed());
+  setDestination(132,33,hospitalFeature,'')
 });
 
 el("oita").addEventListener("click",function(){
