@@ -134,7 +134,7 @@ hospitalFeature.setStyle(
   })
 );
 
-const aedFeature = new ol.Feature();
+let aedFeature = new ol.Feature();
 aedFeature.setStyle(
   new ol.style.Style({
     image: new ol.style.Circle({
@@ -180,23 +180,21 @@ function setLayer(type,array){
   }else if(type==="aed"){
     
     for(let i=0;i<array.length;i++){
-      let feature = aedFeaute;
       let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
-      feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
-      featureArray.push(feature);
-      const ex = new ol.Overlay({
+      aedFeature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
+      featureArray.push(aedFeature);
+      let ex = new ol.Overlay({
         position: ol.proj.fromLonLat(array[i]),
         element: el("aed"+i),
       });
       map.addOverlay(ex);
     }
-    let layer = aedLayer;
-    layer.setSource(
+    aedLayer.setSource(
       new ol.source.Vector({
         features: featureArray
       })
     );
-    map.addLayer(layer);
+    map.addLayer(aedLayer);
     
   }else{
     alert("ERROR");
