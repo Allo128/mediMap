@@ -75,6 +75,7 @@ positionFeature.setStyle(
 
 el("checkButton").addEventListener("click",function(){
   alert(el("nameText").value);
+  alert(setAed());
 });
 
 el("oita").addEventListener("click",function(){
