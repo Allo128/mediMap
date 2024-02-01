@@ -192,7 +192,7 @@ function setLayer(feature,array){
 
   }else if(feature=='aed'){
     
-    for(let i=0;i<array.length;i++){
+    for(let i=0;i<20;i++){
       let number = i+1;
       let container = new ol.Feature();
       aedFeatureSet(container);
