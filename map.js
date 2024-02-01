@@ -322,7 +322,8 @@ function coder(address){
   xhr.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
       const responseXML = this.responseXML;
-      el("coord").innerHTML = responseXML;
+      //el("coord").innerHTML = responseXML;
+      alert(responseXML);
     }
   };
 };
