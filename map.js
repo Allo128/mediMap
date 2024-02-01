@@ -316,7 +316,7 @@ function coder(address){
   const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
   //el("coord").innerHTML = url;
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
+  xhr.open('GET', url, false);
   xhr.send();
 
   xhr.onreadystatechange = function() {
