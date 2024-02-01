@@ -73,9 +73,11 @@ positionFeature.setStyle(
   })
 );
 
-
+let kusa = [0,8];
 el("checkButton").addEventListener("click",function(){
   alert(el("nameText").value);
+  let hoge = kusa;
+  alert(hoge);
 });
 
 el("oita").addEventListener("click",function(){
@@ -168,7 +170,7 @@ function setLayer(type,array){
       feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(feature);
     }
-    const layer = hospitalLayer;
+    let layer = hospitalLayer;
     layer.setSource(
       new ol.source.Vector({
         features: featureArray
@@ -189,7 +191,7 @@ function setLayer(type,array){
       });
       map.addOverlay(ex);
     }
-    const layer = aedLayer;
+    let layer = aedLayer;
     layer.setSource(
       new ol.source.Vector({
         features: featureArray
