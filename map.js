@@ -315,8 +315,7 @@ async function coder(address){
   const encoded = encodeURI(address);
   const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
   const res = await fetch(url);
-  const users = await res.json();
-  alert(users);
+  alert(res);
 };
 
 
@@ -331,5 +330,4 @@ window.addEventListener("DOMContentLoaded",function(){
   xhrCsv("Datas/aed.csv",aedArray);
   xhrCsv("Datas/hospital.csv",hospitalArray);
   el("coord").innerHTML = `"${aedArray[2][0]}"+"${hospitalArray[2][0]}"`;
-  coder("大分県");
 });
