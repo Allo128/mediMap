@@ -222,7 +222,6 @@ function setHospital(){
   let former = el("details");
   for (let i = 2; i < length; i++){
     let child = document.createElement("div");
-    let text = document.createElement("p");
     let name = arr[i][0];
     let post = arr[i][1];
     let place = arr[i][2];
@@ -256,11 +255,7 @@ function setHospital(){
   }
 }
 for(let i = 2; i < hospitalArray.length; i++){
-  eval(
-    `el(hospital${i}).addEventListener("click",function(){
-      
-    });`
-  );
+  
 }
 
 
