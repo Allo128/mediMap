@@ -180,8 +180,8 @@ function setLayer(type,array){
   }else if(type==="aed"){
     
     for(let i=0;i<array.length;i++){
-      const feature = aedFeaute;
-      const coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
+      let feature = aedFeaute;
+      let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(feature);
       const ex = new ol.Overlay({
