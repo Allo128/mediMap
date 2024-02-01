@@ -314,12 +314,20 @@ function coder(address){
   const id = "dj00aiZpPVV6WlpKTm0xWndUZiZzPWNvbnN1bWVyc2VjcmV0Jng9MmI-";
   const encoded = encodeURI(address);
   const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
-  const res = fetch(url);
-  el("coord").innerHTML = res;
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', rul, true);
+  xhr.send();
+
+  xhr.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+      const responseXML = this.responseXML;
+      el("coord").innerHTML = responseXML;
+    }
+  };
 };
 
 
-coder("大分県");
+
 
 
 
