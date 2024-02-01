@@ -272,22 +272,21 @@ function xhrCsv(path,arrayName){
 
 
 function setAed(){
-  let arr = aedArray;
-  let length = arr.length;
+  let length = aedArray.length;
   let parent = el("markers");
   let coordArray = [];
   for (let i = 1; i < length; i++){
     let child = document.createElement("div");
-    child.dataset.name = arr[i][4];
-    child.dataset.place = arr[i][6];
-    child.dataset.phone = arr[i][11];
+    child.dataset.name = aedArray[i][4];
+    child.dataset.place = aedArray[i][6];
+    child.dataset.phone = aedArray[i][11];
     child.id = "aed" + i;
-    child.onclick = showInfo(aed,i);
-    child.innerHTML = arr[i][0];
+    //child.onclick = showInfo(aed,i);
+    child.innerHTML = aedArray[i][1];
     child.style.display = "none";
     parent.appendChild(child);
-    let lng = arr[i][9];
-    let lat = arr[i][8];
+    let lng = aedArray[i][9];
+    let lat = aedArray[i][8];
     coordArray.push([lng,lat]);
   }
   return coordArray;
