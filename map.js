@@ -315,7 +315,7 @@ async function coder(address){
   const encoded = encodeURI(address);
   const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
   const res = await fetch(url);
-  alert(res);
+  el("coord").innerHTML = res;
 };
 
 
@@ -332,5 +332,5 @@ window.addEventListener("DOMContentLoaded",function(){
   geolocation.setTracking(true);
   xhrCsv("Datas/aed.csv",aedArray);
   xhrCsv("Datas/hospital.csv",hospitalArray);
-  el("coord").innerHTML = `"${aedArray[2][0]}"+"${hospitalArray[2][0]}"`;
+  //el("coord").innerHTML = `"${aedArray[2][0]}"+"${hospitalArray[2][0]}"`;
 });
