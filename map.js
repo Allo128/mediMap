@@ -161,9 +161,9 @@ const aedLayer = new ol.layer.Vector({
 function setLayer(type,array){
   const featureArray = [];
   if(type=="hospital"){
-    
+
+    const feature = hospitalFeaute;
     for(let i=0;i<array.length;i++){
-      const feature = hospitalFeaute;
       //const coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(feature);
@@ -180,9 +180,14 @@ function setLayer(type,array){
     
     const feature = aedFeaute;
     for(let i=0;i<array.length;i++){
-      //const coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
+      const coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       feature.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(feature);
+      const ex = new ol.Overlay({
+        position: ol.proj.fromLonLat(array[i]),
+        element: el("aed"+i),
+      });
+      map.addOverlay(ex);
     }
     const layer = aedLayer;
     layer.setSource(
@@ -265,48 +270,26 @@ function xhrCsv(path,arrayName){
 
 
 
-function setHospital(){
-  let arr = hospitalArray;
-  let length = hospitalArray.length;
+function setAed(){
+  let arr = aedArray;
+  let length = arr.length;
   let parent = el("markers");
   let coordArray = [];
-  for (let i = 2; i < length; i++){
+  for (let i = 1; i < length; i++){
     let child = document.createElement("div");
-    child.dataset.name = arr[i][0];
-    child.dataset.post = arr[i][1];
-    child.dataset.place = arr[i][2];
-    child.dataset.phone = arr[i][3];
-    child.dataset.subject = arr[i][5];
-    let normalBed = arr[i][6];
-    let longBed = arr[i][7];
-    let totalBed = arr[i][8];
-    if(normalBed == null && longBed == null){
-      normalBed = 0;
-      longBed = 0;
-      totalBed = 0;
-    }else{
-      if(normalBed == null && longBed){
-        normalBed = 0;
-      }else if(longBed == null && normalBed){
-        longBed = 0;
-      }else{
-        totalBed = normalBed + longBed;
-      }
-    }
-    child.dataset.normalBed = normalBed;
-    child.dataset.longBed = longBed;
-    child.dataset.totalBed = totalBed;
-    child.id = "hospital" + i;
-    child.onclick = showInfo(hospital,i);
+    child.dataset.name = arr[i][4];
+    child.dataset.place = arr[i][6];
+    child.dataset.phone = arr[i][11];
+    child.id = "aed" + i;
+    child.onclick = showInfo(aed,i);
     child.innerHTML = arr[i][0];
     child.style.display = "none";
     parent.appendChild(child);
-    //国土地理院APIで座標変換
-    let lng;
-    let lat;
+    let lng = arr[i][9];
+    let lat = arr[i][8];
     coordArray.push([lng,lat]);
   }
-  
+  return coordArray;
 }
 
 
