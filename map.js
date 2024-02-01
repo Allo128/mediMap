@@ -324,6 +324,8 @@ function coder(address){
       const responseXML = this.responseXML;
       //el("coord").innerHTML = responseXML;
       alert(responseXML);
+    } else {
+      alert("ERROR");
     }
   };
 };
