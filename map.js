@@ -322,7 +322,7 @@ function coder(address){
   } catch (err) {
     console.log(err);
   }
-  const responseXML = xhr.responseText;
+  const responseXML = xhr.responseXML;
   el("coord").innerHTML = responseXML;
   //alert(responseXML);
 };
