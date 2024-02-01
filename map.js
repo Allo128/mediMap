@@ -310,11 +310,11 @@ function setHospital(){
 }
 
 
-async function coder(address){
+function coder(address){
   const id = "dj00aiZpPVV6WlpKTm0xWndUZiZzPWNvbnN1bWVyc2VjcmV0Jng9MmI-";
   const encoded = encodeURI(address);
   const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
-  const res = await fetch(url);
+  const res = fetch(url);
   el("coord").innerHTML = res;
 };
 
