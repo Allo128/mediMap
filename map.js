@@ -191,15 +191,26 @@ function setLayer(feature,array){
 
 
   }else if(feature=='aed'){
-    
     for(let i=0;i<20;i++){
       let number = i+1;
-      let container = new ol.Feature();
-      aedFeatureSet(container);
       let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
-      container.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
-      featureArray.push(container);
-      container = "";
+      featureArray.push(
+        new ol.Feature({
+          style: new ol.style.Style({
+            image: new ol.style.Circle({
+              radius: 4,
+              fill: new ol.style.Fill({
+                 color: '#f5d247'
+              }),
+              stroke: new ol.style.Stroke({
+                color: '#FFF',
+                width: 1
+              })
+            })
+          }),
+          geometry: new ol.geom.Point(coordinate)
+        })
+      );
       //aedFeature.setGeometry();
       let ex = new ol.Overlay({
         position: ol.proj.fromLonLat(array[i]),
