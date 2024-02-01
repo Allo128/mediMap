@@ -163,13 +163,13 @@ function aedFeatureSet(feature){
   feature.setStyle(
     new ol.style.Style({
       image: new ol.style.Circle({
-        radius: 8,
+        radius: 4,
         fill: new ol.style.Fill({
           color: '#f5d247'
         }),
         stroke: new ol.style.Stroke({
           color: '#FFF',
-          width: 2
+          width: 1
         })
       })
     })
