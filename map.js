@@ -316,18 +316,11 @@ function coder(address){
   const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
   //el("coord").innerHTML = url;
   const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, false);
+  xhr.open('GET', url, true);
   xhr.send();
-
-  xhr.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      const responseXML = this.responseXML;
-      //el("coord").innerHTML = responseXML;
-      alert(responseXML);
-    } else {
-      alert("ERROR");
-    }
-  };
+  const responseXML = this.responseXML;
+  el("coord").innerHTML = responseXML;
+  //alert(responseXML);
 };
 
 
