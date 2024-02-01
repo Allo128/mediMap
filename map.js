@@ -317,8 +317,12 @@ function coder(address){
   //el("coord").innerHTML = url;
   const xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
-  xhr.send();
-  const responseXML = this.responseXML;
+  try {
+    csv.send(null);
+  } catch (err) {
+    console.log(err);
+  }
+  const responseXML = xhr.responseText;
   el("coord").innerHTML = responseXML;
   //alert(responseXML);
 };
