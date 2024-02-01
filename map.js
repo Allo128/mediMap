@@ -199,6 +199,7 @@ function setLayer(feature,array){
       let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       container.setGeometry(coordinate ? new ol.geom.Point(coordinate) : null);
       featureArray.push(container);
+      container = "";
       //aedFeature.setGeometry();
       let ex = new ol.Overlay({
         position: ol.proj.fromLonLat(array[i]),
