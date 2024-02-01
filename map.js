@@ -319,6 +319,9 @@ async function coder(address){
 };
 
 
+coder("大分県");
+
+
 
 function showInfo(type,id){
   
