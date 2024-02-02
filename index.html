@@ -36,7 +36,6 @@
         height:100%;
       }
       .setButton{
-        font-size:25px;
         background-color: #3399CC;
         display:block;
         width:30%;
@@ -54,9 +53,25 @@
         height: 20px;
         background-color:rgba(245, 210, 71, 0.7);
         z-index:1;
+      @media screen and (max-width:1280px){
+        .setButton{
+          width:30%;
+          font-size:25px;
+        }
       }
-
-      
+      @media screen and (max-width:750px){
+        .setButton{
+          width:70%;
+          font-size:17px;
+        }
+        
+      }
+      @media screen and (max-width:550px){
+        .setButton{
+          width:80%;
+          font-size:20px
+        }
+      }
     </style>
   </head>
   <body>
