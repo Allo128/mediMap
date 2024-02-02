@@ -163,14 +163,14 @@ function aedFeatureSet(feature){
 
 
 function appear(){
-  let divs = document.getElementByClassName("overlay");
+  let divs = document.getElementsByClassName("overlay");
   for(let i=0;i<divs.length;i++){
     divs[i].style.display = "block";
   }
 };
 
 function disappear(){
-  let divs = document.getElementByClassName("overlay");
+  let divs = document.getElementsByClassName("overlay");
   for(let i=0;i<divs.length;i++){
     divs[i].style.display = "none";
   }
