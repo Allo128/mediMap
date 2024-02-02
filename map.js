@@ -191,10 +191,10 @@ function setLayer(feature,array){
 
 
   }else if(feature=='aed'){
-    for(let i=0;i<2;i++){
+    for(let i=0;i<array.length;i++){
       let number = i+1;
       //let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
-      featureArray.push(
+      /*featureArray.push(
         new ol.Feature({
           style: new ol.style.Style({
             image: new ol.style.Circle({
@@ -210,7 +210,7 @@ function setLayer(feature,array){
           }),
           geometry: new ol.geom.Point(ol.proj.transform(array[i],"EPSG:4326","EPSG:3857"))
         })
-      );
+      );*/
       //aedFeature.setGeometry();
       let ex = new ol.Overlay({
         position: ol.proj.fromLonLat(array[i]),
@@ -307,6 +307,7 @@ function setAed(){
     child.dataset.place = aedArray[i][6];
     child.dataset.phone = aedArray[i][11];
     child.id = "aed" + i;
+    child.className = "overlay";
     //child.onclick = showInfo(aed,i);
     child.innerHTML = aedArray[i][1];
     //child.style.display = "none";
