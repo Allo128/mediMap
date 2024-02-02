@@ -191,7 +191,7 @@ function setLayer(feature,array){
 
 
   }else if(feature=='aed'){
-    for(let i=0;i<20;i++){
+    for(let i=0;i<2;i++){
       let number = i+1;
       let coordinate = ol.proj.transform(array[i],"EPSG:4326","EPSG:3857");
       featureArray.push(
