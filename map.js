@@ -271,7 +271,7 @@ function setAed(){
     child.id = "aed" + i;
     child.className = "overlay";
     //child.setAttribute('onclick', 'pushButton1("aed",i)');
-    child.onclick = showInfo("aed",i);
+    child.onclick = function(){showInfo("aed",i)};
     child.innerHTML = aedArray[i][1];
     child.style.display = "none";
     parent.appendChild(child);
