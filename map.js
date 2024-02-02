@@ -25,7 +25,8 @@ const map = new ol.Map({
   target: 'container',
   layers: [
     new ol.layer.Tile({
-      source: new ol.source.OSM()
+      source: new ol.source.OSM(),
+      zIndex: 100
     })
   ],
   view: mapview,
