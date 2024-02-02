@@ -264,12 +264,13 @@ function setAed(){
   let coordArray = [];
   for (let i = 1; i < length; i++){
     let child = document.createElement("div");
+    child.dataset.pref = aedArray[i][3];
     child.dataset.name = aedArray[i][4];
     child.dataset.place = aedArray[i][6];
     child.dataset.phone = aedArray[i][11];
     child.id = "aed" + i;
     child.className = "overlay";
-    //child.onclick = showInfo("aed",i);
+    child.onclick = showInfo("aed",i);
     child.innerHTML = aedArray[i][1];
     child.style.display = "none";
     parent.appendChild(child);
@@ -292,7 +293,10 @@ function showInfo(type,id){
 
   }else if(type=="aed"){
     let original = el(`aed${id}`);
-    let name = 
+    el("pref").innerHTML = original.dataset.pref;
+    el("name").innerHTML = original.dataset.name;
+    el("place").innerHTML = original.dataset.place;
+    el("phone").innerHTML = original.dataset.phone;
   }else{
     alert("ERROR");
   }
