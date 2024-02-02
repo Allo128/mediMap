@@ -218,12 +218,12 @@ function setLayer(feature,array){
       });
       map.addOverlay(ex);
     }
-    aedLayer.setSource(
+    /*aedLayer.setSource(
       new ol.source.Vector({
         features: featureArray
       })
     );
-    map.addLayer(aedLayer);
+    map.addLayer(aedLayer);*/
   }else{
     alert("ERROR");
   }
