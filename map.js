@@ -279,9 +279,9 @@ function setAed(){
     child.dataset.phone = aedArray[i][11];
     child.id = "aed" + i;
     child.className = "overlay";
-    child.onclick = showInfo("aed",i);
+    //child.onclick = showInfo("aed",i);
     child.innerHTML = aedArray[i][1];
-    child.style.display = "none";
+    //child.style.display = "none";
     parent.appendChild(child);
     let lng = aedArray[i][9];
     let lat = aedArray[i][8];
