@@ -271,7 +271,7 @@ function setAed(){
     child.id = "aed" + i;
     child.className = "overlay";
     //child.setAttribute('onclick', 'pushButton1("aed",i)');
-    child.onclick = 'showInfo("aed",i)';
+    child.onclick = showInfo("aed",i);
     child.innerHTML = aedArray[i][1];
     child.style.display = "none";
     parent.appendChild(child);
@@ -289,12 +289,12 @@ function setAed(){
 
 
 
-function showInfo(type,id){
+function showInfo(type,number){
   if(type=="hospital"){
 
   }else if(type=="aed"){
     alert("happy");
-    let original = el("aed"+id);
+    let original = el("aed" + number);
     el("pref").innerHTML = original.dataset.pref;
     el("name").innerHTML = original.dataset.name;
     el("place").innerHTML = original.dataset.place;
