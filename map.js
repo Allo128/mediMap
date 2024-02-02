@@ -294,6 +294,7 @@ function showInfo(type,id){
     
   }else{
     alert("ERROR");
+  }
 }
 
 
