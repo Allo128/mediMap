@@ -73,19 +73,8 @@ positionFeature.setStyle(
   })
 );
 
-el("checkButton").addEventListener("click",function(){
-  alert(el("nameText").value);
-  //alert(setAed());
-  setDestination(132,33,hospitalFeature,'')
-});
 
 
-
-const oita = new ol.Overlay({
-  position: ol.proj.fromLonLat([131, 33]),
-  element: el("oita"),
-});
-map.addOverlay(oita);
 
 
 
@@ -178,14 +167,14 @@ function appear(){
   for(let i=0;i<divs.length;i++){
     divs[i].style.display = "block";
   }
-}
+};
 
 function disappear(){
   let divs = document.getElementByClassName("overlay");
   for(let i=0;i<divs.length;i++){
     divs[i].style.display = "none";
   }
-}
+};
 
 
 
