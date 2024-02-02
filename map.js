@@ -293,7 +293,6 @@ function showInfo(type,number){
   if(type=="hospital"){
 
   }else if(type=="aed"){
-    alert("happy");
     let original = el("aed" + number);
     el("pref").innerHTML = original.dataset.pref;
     el("name").innerHTML = original.dataset.name;
