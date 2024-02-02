@@ -291,7 +291,8 @@ function showInfo(type,id){
   if(type=="hospital"){
 
   }else if(type=="aed"){
-    
+    let original = el(`aed${id}`);
+    let name = 
   }else{
     alert("ERROR");
   }
