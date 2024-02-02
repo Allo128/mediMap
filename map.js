@@ -271,7 +271,7 @@ function setAed(){
     child.className = "overlay";
     //child.onclick = showInfo("aed",i);
     child.innerHTML = aedArray[i][1];
-    //child.style.display = "none";
+    child.style.display = "none";
     parent.appendChild(child);
     let lng = aedArray[i][9];
     let lat = aedArray[i][8];
@@ -281,22 +281,6 @@ function setAed(){
 }
 
 
-function coder(address){
-  const id = "";
-  const encoded = encodeURI(address);
-  const url = `https://map.yahooapis.jp/geocode/V1/geoCoder?appid=${id}&query=${encoded}`;
-  //el("coord").innerHTML = url;
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  try {
-    csv.send(null);
-  } catch (err) {
-    console.log(err);
-  }
-  const responseXML = xhr.responseXML;
-  el("coord").innerHTML = responseXML;
-  //alert(responseXML);
-};
 
 
 
@@ -304,7 +288,12 @@ function coder(address){
 
 
 function showInfo(type,id){
-  
+  if(type=="hospital"){
+
+  }else if(type=="aed"){
+    
+  }else{
+    alert("ERROR");
 }
 
 
